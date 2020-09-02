@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
 
 
             BindingList<KeyValuePair<string, string>> ilListesi = new BindingList<KeyValuePair<string, string>>();
-           // ilListesi.Add(new KeyValuePair<string, string>("294", "Kırıkkale"));
+            // ilListesi.Add(new KeyValuePair<string, string>("294", "Kırıkkale"));
             ilListesi.Add(new KeyValuePair<string, string>("314", "Kırşehir"));
 
             cmbIl.DataSource = ilListesi;
@@ -218,6 +218,7 @@ namespace WindowsFormsApp1
             }
             // Belge Türü X, belge açıklaması EARVFATICM, kategori idsi seçilen kategori olan fişler fiş tarihine göre seçilir
             #region FİŞLERİ SEÇ
+            int sayac = 1;
             foreach (var item in listeSerial)
             {
                 string fisIdStr = "";
@@ -245,13 +246,12 @@ namespace WindowsFormsApp1
                 }
                 //Seçilen Fiş idlerin detaylarına gidilip belge noları kısmına e-arşiv numaraları yazılır
                 #region FİŞ DETAY
-                int sayac = 1;
                 if (fisIdStr != "")
                 {
                     OracleCommand cmd1 = new OracleCommand("update muh_gm_fis_detay t set t.belge_no = '" + eIcmalNo + "' where t.fis_id in (" + fisIdStr + ") ", con);
                     int rowsUpdated = cmd1.ExecuteNonQuery();
                     da.UpdateCommand = cmd1;
-                    if (rowsUpdated > 0 && sayac ==1)
+                    if (rowsUpdated > 0 && sayac == 1)
                     {
                         MessageBox.Show("İşlem Tamamlandı");
                         sayac++;
@@ -270,7 +270,7 @@ namespace WindowsFormsApp1
                     row.DefaultCellStyle.BackColor = Color.Red;
                 }
         }
-        
+
 
         //private void cmb_SelectedIndexChanged(object sender, EventArgs e)
         //{
