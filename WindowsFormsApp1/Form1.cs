@@ -228,7 +228,7 @@ namespace WindowsFormsApp1
                 OracleDataAdapter da = new OracleDataAdapter();
 
                 OracleCommand command = con.CreateCommand();
-                string sql = "select t.fis_id from muh_gm_fis t where t.belge_turu = 'X' and t.belge_aciklama = 'EARVFATICM' and t.kategori_id = '" + kategoriId + "' and t.fis_tarihi = '" + tarih + "'";
+                string sql = "select t.fis_id from muh_gm_fis t where t.belge_turu = 'X' and t.durum = 'O' and t.belge_aciklama = 'EARVFATICM' and t.kategori_id = '" + kategoriId + "' and t.fis_tarihi = '" + tarih + "'";
                 command.CommandText = sql;
 
                 OracleDataReader reader = command.ExecuteReader();
