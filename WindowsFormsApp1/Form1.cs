@@ -195,9 +195,9 @@ namespace WindowsFormsApp1
 
             OracleConnectionStringBuilder ocsb = new OracleConnectionStringBuilder();
 
-            ocsb.Password = "TEST_KIRGAZ";
-            ocsb.UserID = "TEST_KIRGAZ";
-            ocsb.DataSource = "192.168.102.140:1521/docuart";
+            ocsb.Password = passwordDB;
+            ocsb.UserID = userIdDB;
+            ocsb.DataSource = dataSourceDB;
 
             con.ConnectionString = ocsb.ConnectionString;
             try
@@ -270,6 +270,7 @@ namespace WindowsFormsApp1
                     row.DefaultCellStyle.BackColor = Color.Red;
                 }
         }
+        
 
         //private void cmb_SelectedIndexChanged(object sender, EventArgs e)
         //{
