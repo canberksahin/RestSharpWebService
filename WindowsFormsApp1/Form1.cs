@@ -255,6 +255,12 @@ namespace WindowsFormsApp1
                     {
                         MessageBox.Show("İşlem Tamamlandı");
                         sayac++;
+
+                        foreach (DataGridViewRow row in dgvListe.Rows)
+                            if (row == dgvListe.SelectedRows[0])
+                            {
+                                row.DefaultCellStyle.BackColor = Color.Red;
+                            }
                     }
                 }
                 #endregion
@@ -264,11 +270,7 @@ namespace WindowsFormsApp1
 
 
 
-            foreach (DataGridViewRow row in dgvListe.Rows)
-                if (row == dgvListe.SelectedRows[0])
-                {
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                }
+
         }
 
 
